@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4NetSampleWebApp", "src\Log4NetSampleWebApp\Log4NetSampleWebApp.csproj", "{6C79680B-BFBE-409F-9611-54C2D457BDA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4NetUdpConsole", "src\Log4NetUdpConsole\Log4NetUdpConsole.csproj", "{2DB4FDD1-975C-4F32-ABB4-745C56EE4497}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C79680B-BFBE-409F-9611-54C2D457BDA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C79680B-BFBE-409F-9611-54C2D457BDA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C79680B-BFBE-409F-9611-54C2D457BDA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C79680B-BFBE-409F-9611-54C2D457BDA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DB4FDD1-975C-4F32-ABB4-745C56EE4497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DB4FDD1-975C-4F32-ABB4-745C56EE4497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DB4FDD1-975C-4F32-ABB4-745C56EE4497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DB4FDD1-975C-4F32-ABB4-745C56EE4497}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F15E7D4-B23B-44B1-88B6-AF4DCA74213A}
+	EndGlobalSection
+EndGlobal
