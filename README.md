@@ -76,14 +76,10 @@ Additionally, there's one more line to add to *AssemblyInfo.cs* in the Propertie
 Configure the `ColoredConsoleAppender` and set the log-level colors. The following goes in your *App.config*:
 
 	<configSections>
-		<section name="log4net" 
-
-				type="System.Configuration.IgnoreSectionHandler" />
+		<section name="log4net" type="System.Configuration.IgnoreSectionHandler" />
 	</configSections>
 	<log4net>
-		<appender name="ColoredConsoleAppender" 
-
-			type="log4net.Appender.ColoredConsoleAppender">
+		<appender name="ColoredConsoleAppender" type="log4net.Appender.ColoredConsoleAppender">
 			<mapping>
 				<level value="INFO" />
 				<foreColor value="White, HighIntensity" />
@@ -125,9 +121,7 @@ The web application gets configured to use an external config file for log4net. 
 		<appender name="UdpAppender" type="log4net.Appender.UdpAppender">
 			<param name="RemoteAddress" value="127.0.0.1" />
 			<param name="RemotePort" value="8081" />
-			<layout type="log4net.Layout.PatternLayout" 
-
-				value="{%level}%date{MM/dd HH:mm:ss} - %message" />
+			<layout type="log4net.Layout.PatternLayout" value="{%level}%date{MM/dd HH:mm:ss} - %message" />
 		</appender>
 		<root>
 			<level value="ALL" />
