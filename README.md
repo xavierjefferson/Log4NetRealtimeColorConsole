@@ -1,22 +1,18 @@
-# A log4net Realtime Color Console for ASP.NET #
-
-An article on how to create a real-time log4net color console viewer for ASP.NET applications.
+# A log4net Realtime Color Console for .NET Applications #
 
 ![](img/AspLog4netColorConsole.jpg)
 
-## Pre-Introduction ##
-
-This code borrows quite heavily from a previous example [here on CodeProject](https://www.codeproject.com/Articles/17345/A-log4net-Realtime-Color-Console-for-ASP-NET), but I converted it to C# from Visual Basic.  The previous example was written by Philip Liebscher in 2007 (wow!).
 
 ## Introduction ##
 
+This code borrows quite heavily from a previous example [here on CodeProject](https://www.codeproject.com/Articles/17345/A-log4net-Realtime-Color-Console-for-ASP-NET), but I converted it to C# from Visual Basic.  The previous example was written by Philip Liebscher in 2007 (wow!).
+
 This example includes two components:
 
-- A web application that sends log4net log messages out via UDP.  It makes use of the [UdpAppender](http://logging.apache.org/log4net/release/config-examples.html#udpappender) of log4net, which in turn opens a UDP connection upon which to send messages.
-- A console application that receives the messages from the web application via its own listening UDP connection.  As it receives them, it renders them out in pretty pretty colors for all to see, like the illustration above.  
-
-
-## Using the Code ##
+- A console application that receives the messages from the web application via its own listening UDP connection.  As it receives them, it renders them out in pretty pretty colors for all to see, like the illustration above.
+- A web application that sends log4net log messages out via UDP.  It makes use of the [UdpAppender](http://logging.apache.org/log4net/release/config-examples.html#udpappender) of log4net, which in turn opens a UDP connection upon which to send messages.  This component is just an example to show you how to send messages to the console application. 
+  
+## Code and Configuration for the Console Application ##
 The code for the console app is pretty simple:
 
 	using System;
@@ -110,6 +106,7 @@ Configure the `ColoredConsoleAppender` and set the log-level colors. The followi
 		</root>
 	</log4net>
 
+## Code and Configuration for the Web Application ##
 The web application gets configured to use an external config file for log4net.  Within that file, you configure a UdpAppender [per the log4net documentation](https://logging.apache.org/log4net/release/config-examples.html):
 
 -   The RemotePort property has to match the port in the console application, which is hard-coded to 8081.
