@@ -114,17 +114,17 @@ The web application gets configured to use an external config file for log4net. 
 -   To help format the output, you can put whichever PatternLayout syntax you like.  Consult the log4net docs for help with that.
 
 
-	<log4net>
-		<appender name="UdpAppender" type="log4net.Appender.UdpAppender">
-			<param name="RemoteAddress" value="127.0.0.1" />
-			<param name="RemotePort" value="8081" />
-			<layout type="log4net.Layout.PatternLayout" value="{%level}%date{MM/dd HH:mm:ss} - %message" />
-		</appender>
-		<root>
-			<level value="ALL" />
-			<appender-ref ref="UdpAppender" />
-		</root>
-	</log4net>
+    <log4net>
+        <appender name="UdpAppender" type="log4net.Appender.UdpAppender">
+            <param name="RemoteAddress" value="127.0.0.1" />
+            <param name="RemotePort" value="8081" />
+            <layout type="log4net.Layout.PatternLayout" value="{%level}%date{MM/dd HH:mm:ss} - %message" />
+        </appender>
+        <root>
+            <level value="ALL" />
+            <appender-ref ref="UdpAppender" />
+        </root>
+    </log4net>
 
 ## Points of Interest ##
 
