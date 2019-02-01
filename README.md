@@ -13,6 +13,9 @@ This example includes two components:
 - A web application that sends log4net log messages out via UDP.  It makes use of the [UdpAppender](http://logging.apache.org/log4net/release/config-examples.html#udpappender) of log4net, which in turn opens a UDP connection upon which to send messages.  This component is just an example to show you how to send messages to the console application. 
   
 ## Code and Configuration for the Console Application ##
+
+### Code ###
+
 The code for the console app is pretty simple:
 
 	using System;
@@ -69,6 +72,8 @@ Additionally, there's one more line to add to *AssemblyInfo.cs* in the Propertie
 
     [assembly: XmlConfigurator(Watch = true)]
 
+### Configuration ###
+
 Configure the `ColoredConsoleAppender` and set the log-level colors. The following goes in your *App.config*:
 
 	<configSections>
@@ -107,6 +112,17 @@ Configure the `ColoredConsoleAppender` and set the log-level colors. The followi
 	</log4net>
 
 ## Code and Configuration for the Web Application ##
+
+### Code ###
+
+The web application is an ASP.NET project with a single form.  There are several component files, but the gist of this is that when you fire up the web application, it'll automatically start sending log messages to the console application as soon as you start the two of them. 
+
+Then try the two buttons you see.  Both will send log messages at different log levels, and you'll see the different colors in the console application.
+
+![](img/webexample.png)
+
+### Configuration ###
+
 The web application gets configured to use an external config file for log4net.  Within that file, you configure a UdpAppender [per the log4net documentation](https://logging.apache.org/log4net/release/config-examples.html):
 
 -   The RemotePort property has to match the port in the console application, which is hard-coded to 8081.
@@ -114,16 +130,18 @@ The web application gets configured to use an external config file for log4net. 
 -   To help format the output, you can put whichever PatternLayout syntax you like.  Consult the log4net docs for help with that.
 
 
+
+
     <log4net>
-        <appender name="UdpAppender" type="log4net.Appender.UdpAppender">
-            <param name="RemoteAddress" value="127.0.0.1" />
-            <param name="RemotePort" value="8081" />
-            <layout type="log4net.Layout.PatternLayout" value="{%level}%date{MM/dd HH:mm:ss} - %message" />
-        </appender>
-        <root>
-            <level value="ALL" />
-            <appender-ref ref="UdpAppender" />
-        </root>
+    	<appender name="UdpAppender" type="log4net.Appender.UdpAppender">
+    		<param name="RemoteAddress" value="127.0.0.1" />
+    		<param name="RemotePort" value="8081" />
+    		<layout type="log4net.Layout.PatternLayout" value="{%level}%date{MM/dd HH:mm:ss} - %message" />
+    	</appender>
+    	<root>
+    		<level value="ALL" />
+    		<appender-ref ref="UdpAppender" />
+    	</root>
     </log4net>
 
 ## Points of Interest ##
